@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="bdf2c585-32d4-46e6-87f9-584e5d0108a7" ChangeDateTime="11/17/2023 02:24:29">
+    <Property Name="ElementName" Value="[dbo].[tlb_empresa].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tlb_empresa]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="cod_loja" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="015b3093-bc87-4660-a55b-5d5d573d6abc" ChangeDateTime="11/17/2023 02:32:30">
+    <Property Name="ElementName" Value="[dbo].[tlb_cliente].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tlb_cliente]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="cod_cliente" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9ba1f24c-4249-4be8-a8c8-91a644165821" ChangeDateTime="11/17/2023 02:35:23">
+    <Property Name="ElementName" Value="[dbo].[tlb_cliente].[desc_estado]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tlb_cliente]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="cod_estado" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e1ca0f24-78de-45fa-912f-4f6dfc612c6c" ChangeDateTime="11/17/2023 02:35:36">
+    <Property Name="ElementName" Value="[dbo].[tlb_cliente].[des]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tlb_cliente]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="desc_estado" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="835afa58-0f6c-49b0-98d0-d2950c25e80e" ChangeDateTime="11/17/2023 02:45:37">
+    <Property Name="ElementName" Value="[dbo].[tlb_produto].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tlb_produto]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="cod_produto" />
+  </Operation>
+</Operations>

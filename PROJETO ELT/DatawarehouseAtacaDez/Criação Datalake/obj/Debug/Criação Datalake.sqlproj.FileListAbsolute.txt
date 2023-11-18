@@ -1,0 +1,6 @@
+C:\Users\Fabricio Rodrigues\Desktop\Projeto dw_atacadez\PROJETO ELT\DatawarehouseAtacaDez\Criação Datalake\bin\Debug\Criação Datalake.dacpac
+C:\Users\Fabricio Rodrigues\Desktop\Projeto dw_atacadez\PROJETO ELT\DatawarehouseAtacaDez\Criação Datalake\bin\Debug\Criação_Datalake.dll
+C:\Users\Fabricio Rodrigues\Desktop\Projeto dw_atacadez\PROJETO ELT\DatawarehouseAtacaDez\Criação Datalake\bin\Debug\Criação_Datalake.pdb
+C:\Users\Fabricio Rodrigues\Desktop\Projeto dw_atacadez\PROJETO ELT\DatawarehouseAtacaDez\Criação Datalake\obj\Debug\Criação Datalake.sqlproj.AssemblyReference.cache
+C:\Users\Fabricio Rodrigues\Desktop\Projeto dw_atacadez\PROJETO ELT\DatawarehouseAtacaDez\Criação Datalake\obj\Debug\Criação_Datalake.dll
+C:\Users\Fabricio Rodrigues\Desktop\Projeto dw_atacadez\PROJETO ELT\DatawarehouseAtacaDez\Criação Datalake\obj\Debug\Criação_Datalake.pdb
