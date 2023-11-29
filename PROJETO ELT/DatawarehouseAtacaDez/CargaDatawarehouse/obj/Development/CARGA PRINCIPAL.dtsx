@@ -1,0 +1,1111 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/27/2023 12:02:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="FABRICIORODRIGU"
+  DTS:CreatorName="FABRICIORODRIGU\Fabricio Rodrigues"
+  DTS:DTSID="{C064923F-942B-44E3-B821-A4F20BDA8E98}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="CARGA PRINCIPAL"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{07DE6A9A-4C01-450C-B38F-020A64EC8BF4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FABRICIORODRIGU.DL_ATACADEZ]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{281B8F24-9CE8-4289-8D5A-C47DA52A0FDD}"
+      DTS:ObjectName="FABRICIORODRIGU.DL_ATACADEZ">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=FABRICIORODRIGU;Initial Catalog=DL_ATACADEZ;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-CARGA_DATALAKE-{281B8F24-9CE8-4289-8D5A-C47DA52A0FDD}FABRICIORODRIGU.DL_ATACADEZ;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F5272338-C406-4C48-822F-1BD0D5E3794F}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Fabricio Rodrigues\Desktop\Projeto dw_atacadez\DataLakeAtacaDez\LOG\LOG_ERRO.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="304"
+              DTS:DataScale="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="data"
+              DTS:DTSID="{28F74AEF-5AC8-46E6-BD95-CD1A7A253150}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mensagem"
+              DTS:DTSID="{29994898-6FBF-48FE-B52A-CF6C1400BAAF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="resultado"
+              DTS:DTSID="{5742C3D6-DCE9-45F4-A02A-A9C8D5C82C29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="data_CONVERTIDA"
+              DTS:DTSID="{C9475CD5-41ED-4C73-95C2-C9B46608E33D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="338"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TEXTO_LOG"
+              DTS:DTSID="{6BEBD8FC-FE21-4A5F-922A-4822B1D7D9D3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LOG]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A9E22136-132A-467B-A64A-B618B9D62772}"
+      DTS:ObjectName="LOG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Fabricio Rodrigues\Desktop\Projeto dw_atacadez\DataLakeAtacaDez\LOG\LOG_ERRO.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="338"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TEXTO_LOG"
+              DTS:DTSID="{478ADA53-9ED6-4B36-89AB-D5D00480CC5D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGA DATA LAKE"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarefa Executar Pacote"
+      DTS:DTSID="{BEAD73D1-2A77-4B2E-8379-81D59A0C1F10}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA DATA LAKE"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>CARGA_DATALAKE.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ESCREVE LOG"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{A8607A45-E952-4B49-975B-B662A9C60A80}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ESCREVE LOG"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Classificar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Classifica os dados de entrada em ordem crescente ou decrescente quando eles não podem ser classificados em sua origem. Por exemplo, classifique dados de vendas por 'customer id' antes de eles serem gravados em um arquivo simples e entregues a outro departamento. Observação: essa transformação não é recomendável para fluxos de dados grandes."
+              name="CLASSIFICAR POR DATA"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação Classificação remove linhas com valores de classificação duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número máximo de threads a usar para classificação."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Inputs[Classificar Entrada]"
+                  name="Classificar Entrada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Inputs[Classificar Entrada].Columns[data]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="data"
+                      cachedScale="7"
+                      lineageId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[data]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Inputs[Classificar Entrada].Columns[mensagem]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="mensagem"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[mensagem]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Inputs[Classificar Entrada].Columns[resultado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="resultado"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[resultado]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída]"
+                  isSorted="true"
+                  name="Classificar Saída">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[data]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[data]"
+                      name="data"
+                      scale="7"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[data]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[mensagem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[mensagem]"
+                      name="mensagem">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[mensagem]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[resultado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[resultado]"
+                      name="resultado">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[resultado]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ESCREVE LOG\Coluna Derivada"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
+              name="Coluna Derivada"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ESCREVE LOG\Coluna Derivada.Inputs[Entrada de Coluna Derivada]"
+                  description="Entrada para a Transformação Coluna Derivada"
+                  name="Entrada de Coluna Derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[mensagem]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="mensagem"
+                      lineageId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[mensagem]" />
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[resultado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="resultado"
+                      lineageId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[resultado]" />
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[data_CONVERTIDA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="data_CONVERTIDA"
+                      lineageId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[data_CONVERTIDA]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Coluna Derivada]"
+                  description="Saída Padrão da Transformação Coluna Derivada"
+                  exclusionGroup="1"
+                  name="Saída de Coluna Derivada"
+                  synchronousInputId="Package\ESCREVE LOG\Coluna Derivada.Inputs[Entrada de Coluna Derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[TEXTO_LOG]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      length="338"
+                      lineageId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[TEXTO_LOG]"
+                      name="TEXTO_LOG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expressão de Coluna Derivada"
+                          name="Expression">#{Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[data_CONVERTIDA]} + ":(" + #{Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[resultado]} + ")" + #{Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[mensagem]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expressão Amigável de Coluna Derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">data_CONVERTIDA + ":(" + resultado + ")" + mensagem</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Erro de Coluna Derivada]"
+                  description="Saída de Erro da Transformação Coluna Derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Coluna Derivada"
+                  synchronousInputId="Package\ESCREVE LOG\Coluna Derivada.Inputs[Entrada de Coluna Derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ESCREVE LOG\Conversão de Dados"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Conversão de Dados"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ESCREVE LOG\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[data]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="data"
+                      cachedScale="7"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[data]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\ESCREVE LOG\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[data_CONVERTIDA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[data_CONVERTIDA]"
+                      name="data_CONVERTIDA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída].Columns[data]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\ESCREVE LOG\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ESCREVE LOG\Destino de Arquivo Simples"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de Arquivo Simples"
+              localeId="1046"
+              name="Destino de Arquivo Simples"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica se os dados substituirão o arquivo de destino ou serão anexados a ele."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica o texto a ser gravado no arquivo de destino antes da gravação de quaisquer dados."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Quando o qualificador de texto está habilitado, ele especifica se o qualificador de texto nos dados gravados no arquivo de destino serão de saída ou não."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ESCREVE LOG\Destino de Arquivo Simples.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LOG]"
+                  connectionManagerRefId="Package.ConnectionManagers[LOG]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ESCREVE LOG\Destino de Arquivo Simples.Inputs[Entrada de Destino de Arquivo Simples]"
+                  hasSideEffects="true"
+                  name="Entrada de Destino de Arquivo Simples">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\Destino de Arquivo Simples.Inputs[Entrada de Destino de Arquivo Simples].Columns[TEXTO_LOG]"
+                      cachedDataType="wstr"
+                      cachedLength="338"
+                      cachedName="TEXTO_LOG"
+                      externalMetadataColumnId="Package\ESCREVE LOG\Destino de Arquivo Simples.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[TEXTO_LOG]"
+                      lineageId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[TEXTO_LOG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ESCREVE LOG\Destino de Arquivo Simples.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[TEXTO_LOG]"
+                      dataType="wstr"
+                      length="338"
+                      name="TEXTO_LOG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\ESCREVE LOG\TBL_LOG"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="TBL_LOG"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[tbl_log]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ESCREVE LOG\TBL_LOG.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FABRICIORODRIGU.DL_ATACADEZ]"
+                  connectionManagerRefId="Package.ConnectionManagers[FABRICIORODRIGU.DL_ATACADEZ]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[data]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].ExternalColumns[data]"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[data]"
+                      name="data"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[mensagem]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].ExternalColumns[mensagem]"
+                      length="255"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[mensagem]"
+                      name="mensagem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[resultado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].ExternalColumns[resultado]"
+                      length="30"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[resultado]"
+                      name="resultado"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].ExternalColumns[data]"
+                      dataType="dbTimeStamp2"
+                      name="data"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].ExternalColumns[mensagem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="mensagem" />
+                    <externalMetadataColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].ExternalColumns[resultado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="resultado" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[data]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[data]"
+                      name="data"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[mensagem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[mensagem]"
+                      name="mensagem" />
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[resultado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[resultado]"
+                      name="resultado" />
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ESCREVE LOG\TIRAR REPETIDAS"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Classificar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Classifica os dados de entrada em ordem crescente ou decrescente quando eles não podem ser classificados em sua origem. Por exemplo, classifique dados de vendas por 'customer id' antes de eles serem gravados em um arquivo simples e entregues a outro departamento. Observação: essa transformação não é recomendável para fluxos de dados grandes."
+              name="TIRAR REPETIDAS"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação Classificação remove linhas com valores de classificação duplicados."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o número máximo de threads a usar para classificação."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ESCREVE LOG\TIRAR REPETIDAS.Inputs[Classificar Entrada]"
+                  name="Classificar Entrada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\TIRAR REPETIDAS.Inputs[Classificar Entrada].Columns[data]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="data"
+                      cachedScale="7"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[data]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\TIRAR REPETIDAS.Inputs[Classificar Entrada].Columns[mensagem]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="mensagem"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[mensagem]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ESCREVE LOG\TIRAR REPETIDAS.Inputs[Classificar Entrada].Columns[resultado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="resultado"
+                      lineageId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[resultado]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica as opções de comparação para os dados de caractere."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a ordem de classificação da coluna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída]"
+                  isSorted="true"
+                  name="Classificar Saída">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[data]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[data]"
+                      name="data"
+                      scale="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[data]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[mensagem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[mensagem]"
+                      name="mensagem"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[mensagem]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[resultado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída].Columns[resultado]"
+                      name="resultado"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                          name="SortColumnId">#{Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB].Columns[resultado]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ESCREVE LOG.Paths[Classificar Saída]"
+              endId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Inputs[Classificar Entrada]"
+              name="Classificar Saída"
+              startId="Package\ESCREVE LOG\TIRAR REPETIDAS.Outputs[Classificar Saída]" />
+            <path
+              refId="Package\ESCREVE LOG.Paths[Classificar Saída1]"
+              endId="Package\ESCREVE LOG\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+              name="Classificar Saída"
+              startId="Package\ESCREVE LOG\CLASSIFICAR POR DATA.Outputs[Classificar Saída]" />
+            <path
+              refId="Package\ESCREVE LOG.Paths[Saída de Coluna Derivada]"
+              endId="Package\ESCREVE LOG\Destino de Arquivo Simples.Inputs[Entrada de Destino de Arquivo Simples]"
+              name="Saída de Coluna Derivada"
+              startId="Package\ESCREVE LOG\Coluna Derivada.Outputs[Saída de Coluna Derivada]" />
+            <path
+              refId="Package\ESCREVE LOG.Paths[Saída de Conversão de Dados]"
+              endId="Package\ESCREVE LOG\Coluna Derivada.Inputs[Entrada de Coluna Derivada]"
+              name="Saída de Conversão de Dados"
+              startId="Package\ESCREVE LOG\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\ESCREVE LOG.Paths[Saída de Origem OLE DB]"
+              endId="Package\ESCREVE LOG\TIRAR REPETIDAS.Inputs[Classificar Entrada]"
+              name="Saída de Origem OLE DB"
+              startId="Package\ESCREVE LOG\TBL_LOG.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{FBBA2B2F-C693-442B-B983-96421118B4DA}"
+      DTS:From="Package\CARGA DATA LAKE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\ESCREVE LOG" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169,42"
+          Id="Package\CARGA DATA LAKE"
+          TopLeft="193,64" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\ESCREVE LOG"
+          TopLeft="210,195" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="280.25,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ESCREVE LOG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\ESCREVE LOG\TBL_LOG"
+          TopLeft="248,63" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\ESCREVE LOG\TIRAR REPETIDAS"
+          TopLeft="210,168" />
+        <EdgeLayout
+          Id="Package\ESCREVE LOG.Paths[Saída de Origem OLE DB]"
+          TopLeft="309.5,105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.5,63"
+              Start="0,0"
+              End="-16.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="-4,31.5" />
+                  <mssgle:LineSegment
+                    End="-12.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.5,31.5"
+                    Point2="-16.5,31.5"
+                    Point3="-16.5,35.5" />
+                  <mssgle:LineSegment
+                    End="-16.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="195,42"
+          Id="Package\ESCREVE LOG\CLASSIFICAR POR DATA"
+          TopLeft="166,255" />
+        <EdgeLayout
+          Id="Package\ESCREVE LOG.Paths[Classificar Saída]"
+          TopLeft="293,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.5,45"
+              Start="0,0"
+              End="-29.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
+                  <mssgle:LineSegment
+                    End="-25.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.5,22.5"
+                    Point2="-29.5,22.5"
+                    Point3="-29.5,26.5" />
+                  <mssgle:LineSegment
+                    End="-29.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\ESCREVE LOG\Conversão de Dados"
+          TopLeft="193,342" />
+        <EdgeLayout
+          Id="Package\ESCREVE LOG.Paths[Classificar Saída1]"
+          TopLeft="263.5,297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.5,45"
+              Start="0,0"
+              End="17.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="13.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,22.5"
+                    Point2="17.5,22.5"
+                    Point3="17.5,26.5" />
+                  <mssgle:LineSegment
+                    End="17.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\ESCREVE LOG\Coluna Derivada"
+          TopLeft="207,439" />
+        <EdgeLayout
+          Id="Package\ESCREVE LOG.Paths[Saída de Conversão de Dados]"
+          TopLeft="283,384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="208,42"
+          Id="Package\ESCREVE LOG\Destino de Arquivo Simples"
+          TopLeft="206,532" />
+        <EdgeLayout
+          Id="Package\ESCREVE LOG.Paths[Saída de Coluna Derivada]"
+          TopLeft="285,481">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25,51"
+              Start="0,0"
+              End="25,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="4,25.5" />
+                  <mssgle:LineSegment
+                    End="21,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21,25.5"
+                    Point2="25,25.5"
+                    Point3="25,29.5" />
+                  <mssgle:LineSegment
+                    End="25,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ESCREVE LOG\TBL_LOG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
